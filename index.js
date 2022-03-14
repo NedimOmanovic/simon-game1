@@ -5,20 +5,14 @@ var userClickedPattern = [];
 
 var started = false;
 var level = 0;
-$(document).click(function() {
+$(document).dblclick(function() {
+
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
   }
 });
-
-/*$("body").click(function() {
-  if (!started) {
-    $("#level-title").text("Level " + level);
-    nextSequence();
-    started = true;
-});*/
 
 $(".btn").click(function() {
 
@@ -42,7 +36,7 @@ function checkAnswer(currentLevel) {
     } else {
       playSound("wrong");
       $("body").addClass("game-over");
-      $("#level-title").text("Game Over, Click to Restart");
+      $("#level-title").text("Game Over, Doubleclick to Restart");
 
       setTimeout(function () {
         $("body").removeClass("game-over");
